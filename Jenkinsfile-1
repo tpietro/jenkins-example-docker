@@ -2,6 +2,9 @@ pipeline {
   agent {
     docker { image 'node:18-alpine' }
   }
+  environment {
+    dockerhub=credentials('6f592f51-8f32-4936-be18-ab77d16e052d')
+  }
   stages {
     stage('Test') {
       steps {
